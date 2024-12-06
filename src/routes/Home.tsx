@@ -16,7 +16,7 @@ const Home = () => {
   // }
 
   return (
-    <div>
+    <main className="relative h-full">
       {/* <button
         onClick={() => {
           handleSignOut();
@@ -37,7 +37,10 @@ const Home = () => {
           <PostCard />
         </div>
       </div>
-    </div>
+      <button className="absolute bottom-0 right-0 p-5 font-bold bg-black rounded-full">
+        <img src="icons/plus.svg" alt="plus" />
+      </button>
+    </main>
   );
 };
 

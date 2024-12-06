@@ -37,7 +37,7 @@ const Signin = () => {
         <div className="mt-6 flex justify-center">
           <button
             onClick={handleSignin}
-            className="rounded-full flex items-center bg-[#292929] text-white"
+            className="rounded-full px-5 py-3 flex items-center bg-[#292929] text-white"
           >
             <img className="mr-3" src="social-icons/google.svg" alt="google" />
             Continue with Google

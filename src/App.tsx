@@ -8,12 +8,18 @@ import Home from "./routes/Home";
 import Signin from "./routes/Signin";
 import AuthContextProvider from "./AuthContextProvider";
 import Protected from "./routes/Protected";
+import Profile from "./routes/Profile";
+import EditProfile from "./routes/EditProfile";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Navigate to="/feed" replace />,
+    },
+    {
+      path: "/signin",
+      element: <Signin />,
     },
     {
       path: "/feed",
@@ -24,8 +30,20 @@ function App() {
       ),
     },
     {
-      path: "/signin",
-      element: <Signin />,
+      path: "/profile",
+      element: (
+        <Protected>
+          <Profile />
+        </Protected>
+      ),
+    },
+    {
+      path: "/edit-profile",
+      element: (
+        <Protected>
+          <EditProfile />
+        </Protected>
+      ),
     },
   ]);
   return (
