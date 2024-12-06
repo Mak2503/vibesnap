@@ -39,7 +39,7 @@ const Signin = () => {
             onClick={handleSignin}
             className="rounded-full flex items-center bg-[#292929] text-white"
           >
-            <img className="mr-3" src="google-icon.svg" alt="google" />
+            <img className="mr-3" src="social-icons/google.svg" alt="google" />
             Continue with Google
           </button>
         </div>
