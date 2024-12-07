@@ -2,6 +2,7 @@ import { useContext } from "react";
 import UserProfile from "../components/UserProfile";
 import { AuthContext } from "../AuthContext";
 import { getAuth, signOut } from "firebase/auth";
+import MyPostFeed from "../components/MyPostFeed";
 
 const Profile: React.FC = () => {
   const { user } = useContext(AuthContext);
@@ -51,7 +52,10 @@ const Profile: React.FC = () => {
       </div>
       <div>
         <h2 className="text-lg font-semibold">My Posts</h2>
-        <div></div>
+        <div className="grid grid-cols-2 gap-4 mt-4">
+          <MyPostFeed />
+          <MyPostFeed />
+        </div>
       </div>
       <button className="absolute bottom-0 right-0 p-5 font-bold bg-black rounded-full">
         <img src="icons/plus.svg" alt="plus" />
