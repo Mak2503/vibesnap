@@ -1,4 +1,3 @@
-// import { getAuth, signOut } from "firebase/auth";
 import UserProfile from "../components/UserProfile";
 import { useContext } from "react";
 import { AuthContext } from "../AuthContext";
@@ -6,24 +5,9 @@ import PostCard from "../components/PostCard";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
-  // const auth = getAuth();
-  // async function handleSignOut() {
-  //   try {
-  //     await signOut(auth);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 
   return (
     <main className="relative h-full">
-      {/* <button
-        onClick={() => {
-          handleSignOut();
-        }}
-      >
-        Sign Out
-      </button> */}
       <div className="flex items-center gap-4">
         <UserProfile imgUrl={user?.photoURL || ""} />
         <div className="kumbh-font">
@@ -33,7 +17,7 @@ const Home = () => {
       </div>
       <div className="mt-12">
         <h2 className="text-2xl font-extrabold">Feeds</h2>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-col gap-6">
           <PostCard />
         </div>
       </div>

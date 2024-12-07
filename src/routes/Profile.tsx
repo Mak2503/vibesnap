@@ -1,9 +1,21 @@
 import { useContext } from "react";
 import UserProfile from "../components/UserProfile";
 import { AuthContext } from "../AuthContext";
+import { getAuth, signOut } from "firebase/auth";
 
 const Profile: React.FC = () => {
   const { user } = useContext(AuthContext);
+  const auth = getAuth();
+  async function handleSignOut() {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  console.log(user);
+
   return (
     <main className="flex flex-col gap-6 relative h-full">
       <div className="absolute">
@@ -20,6 +32,14 @@ const Profile: React.FC = () => {
         <UserProfile className="w-28 h-28" imgUrl={user?.photoURL || ""} />
         <button className="border border-black border-opacity-35 w-52 px-4 py-1.5 text-xs rounded-full font-bold">
           Edit Profile
+        </button>
+        <button
+          className="bg-red-600 w-20 flex justify-center text-white px-5 py-1 rounded-full"
+          onClick={() => {
+            handleSignOut();
+          }}
+        >
+          <img src="icons/logout.svg" alt="logout" />
         </button>
       </div>
       <div>
