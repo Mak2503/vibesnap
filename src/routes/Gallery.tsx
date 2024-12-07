@@ -1,6 +1,5 @@
 import { ChangeEvent, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { FaCamera } from "react-icons/fa"; // Camera icon
 
 function ImagePicker() {
   const [selectedImages, setSelectedImages] = useState<any>([]);
